@@ -1,5 +1,6 @@
-pip install --upgrade streamlit
-pip install streamlit_drawable_canvas
+!pip install streamlit --quiet
+!pip install streamlit-drawable-canvas --quiet
+
 
 import streamlit as st
 from streamlit_drawable_canvas import st_canvas
