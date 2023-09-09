@@ -1,10 +1,10 @@
 import streamlit as st
 import numpy as np
-import joblib
+import tensorflow as tf
 from PIL import Image
 
-# Load your pre-trained scikit-learn model
-model = joblib.load('mnist.h5')  # Replace with the actual path to your model
+# Load your pre-trained MNIST digit classification model
+model = tf.keras.models.load_model('your_model_directory')  # Replace with the actual path to your model
 
 # Set Streamlit app title and header
 st.title("MNIST Digit Classifier")
