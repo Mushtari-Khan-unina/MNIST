@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-import tensorflow-cpu as tf
+import tensorflow as tf
 from PIL import Image
 
 # Load your pre-trained MNIST digit classification model
