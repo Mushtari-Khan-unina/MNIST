@@ -4,7 +4,7 @@ import tensorflow as tf
 from PIL import Image
 
 # Load your pre-trained MNIST digit classification model
-model = tf.keras.models.load_model('mnist.h5')  # Replace with the actual path to your model
+model = tf.keras.models.load_model('')  # Replace with the actual path to your model
 
 # Set Streamlit app title and header
 st.title("MNIST Digit Classifier")
@@ -24,31 +24,31 @@ canvas = st.canvas(
 def predict_digit(image):
     # Resize the image to match the input size expected by the model (28x28 pixels)
     image = image.resize((28, 28), Image.ANTIALIAS)
-    
+
     # Convert the image to grayscale and normalize pixel values
     image = np.array(image.convert('L')) / 255.0
-    
+
     # Reshape the image to match the input shape expected by the model (1, 28, 28, 1)
     image = np.reshape(image, (1, 28, 28, 1))
-    
+
     # Make a prediction using the model
     prediction = model.predict(image)
-    
+
     # Get the predicted digit
     digit = np.argmax(prediction)
-    
+
     return digit, prediction
 
 # When the user clicks the "Predict" button
 if st.button("Predict"):
     # Get the drawn image from the canvas
     drawn_image = canvas.image
-    
+
     # Check if the canvas is not empty
     if drawn_image is not None:
         # Predict the digit and get the confidence scores
         predicted_digit, prediction_scores = predict_digit(drawn_image)
-        
+
         # Display the predicted digit and confidence scores
         st.write(f"Predicted Digit: {predicted_digit}")
         st.write("Prediction Confidence:")
