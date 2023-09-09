@@ -4,7 +4,7 @@ import tensorflow as tf
 from PIL import Image
 
 # Load your pre-trained MNIST digit classification model
-model = tf.keras.models.load_model('')  # Replace with the actual path to your model
+model = tf.keras.models.load_model('mnist.h5')  # Replace with the actual path to your model
 
 # Set Streamlit app title and header
 st.title("MNIST Digit Classifier")
