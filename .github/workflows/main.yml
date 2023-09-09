@@ -20,7 +20,7 @@ jobs:
 
       - name: Install required Python packages
         run: |
-          pip install numpy tensorflow pillow streamlit
+          pip install -r requirements.txt
         shell: bash
 
       - name: Run Streamlit App
