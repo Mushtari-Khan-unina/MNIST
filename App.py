@@ -1,3 +1,6 @@
+pip install --upgrade streamlit
+pip install streamlit_drawable_canvas
+
 import streamlit as st
 from streamlit_drawable_canvas import st_canvas
 import tensorflow as tf
