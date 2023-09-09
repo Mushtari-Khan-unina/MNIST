@@ -40,5 +40,5 @@ jobs:
 
       - name: Run Streamlit App
         run: |
-          streamlit run streamlit_mnist_app.py
+          streamlit run App.py
         shell: bash
