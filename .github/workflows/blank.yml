@@ -1,0 +1,29 @@
+name: Deploy Streamlit App
+
+on:
+  push:
+    branches:
+      - Applink
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.8
+
+      - name: Install required Python packages
+        run: |
+          pip install numpy tensorflow pillow streamlit
+        shell: bash
+
+      - name: Run Streamlit App
+        run: |
+          streamlit run App.py
+        shell: bash
