@@ -1,5 +1,5 @@
-!pip install streamlit --quiet
-!pip install streamlit-drawable-canvas --quiet
+pip install streamlit --quiet
+pip install streamlit-drawable-canvas --quiet
 
 
 import streamlit as st
